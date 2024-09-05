@@ -19,21 +19,26 @@ const ProjectsPage = () => {
           </div>
         </div>
       </div>
-      <div className="container grid grid-cols-4 gap-3">
-        {allProjects.map((project) => (
-          <Link href={`/projects/${project.slug}`} key={project.slug}>
-            <ShineBorder
-              className="relative flex h-auto w-full flex-col items-start justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
-              color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
-            >
-              <div className="flex flex-col pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-                <span className="text-sm">{project.date}</span>
-                <span className="text-3xl">{project.title}</span>
-                <span className="text-md">{project.description}</span>
-              </div>
-            </ShineBorder>
-          </Link>
-        ))}
+      <div className="container px-4 py-8 mx-auto">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {allProjects.map((project) => (
+            <Link href={`/projects/${project.slug}`} key={project.slug} className="group">
+              <ShineBorder
+                className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 hover:scale-105 md:shadow-xl"
+                color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
+              >
+                <div className="flex flex-col space-y-2 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
+                  <span className="text-sm">{project.date}</span>
+                  <h3 className="text-2xl font-bold">{project.title}</h3>
+                  <p className="text-base font-normal">{project.description}</p>
+                </div>
+                <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
+                  Learn more →
+                </div>
+              </ShineBorder>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
