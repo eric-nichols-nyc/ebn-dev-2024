@@ -45,8 +45,7 @@ const ProjectsPage = () => {
                     className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 hover:scale-105 md:shadow-xl"
                     color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
                   >
-                    <div className="flex flex-col space-y-2 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
-                      <span className="text-sm">{project.date}</span>
+                    <div className="flex flex-col space-y-2 pointer-events-none whitespace-pre-wrap bg-gradient-to-t from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
                       <h3 className="text-2xl font-bold">{project.title}</h3>
                       <p className="text-base font-normal">{project.description}</p>
                     </div>
