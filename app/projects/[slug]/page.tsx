@@ -1,3 +1,4 @@
+"use client"
 import { notFound } from "next/navigation";
 import { allProjects } from "contentlayer/generated";
 import { Header } from "./header";
@@ -27,15 +28,15 @@ const ProjectsId = ({ params }: Props) => {
   }
   return (
     <motion.div 
-      className="relative min-h-screen bg-gradient-to-b from-indigo-800 via-black-900 to-black"
+      className="relative min-h-screen"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="container mx-auto">
-        <div className="relative pb-16 px-4 mx-auto">
+      <div className="mx-auto">
+        <div className="relative pb-16 mx-auto">
           <Header project={project} />
-          <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless text-zinc-200">
+          <article className="px-4 mx-auto prose prose-zinc prose-quoteless bg-zinc-50 text-slate-800">
             <Mdx code={project.body.code} />
           </article>
         </div>
