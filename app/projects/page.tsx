@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { allProjects } from "contentlayer/generated";
-import { ShineBorder } from "@/components/ShineBorderCard";
+import { ShineBorder } from "@/components/ui/shine-border";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
@@ -45,11 +45,11 @@ const ProjectsPage = () => {
                   </div>
                 </AnimatedCard>
               </Link>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-      </motion.div>
-    </motion.div>
+        </div>
+      </div>
+    </div>
   );
 };
 
