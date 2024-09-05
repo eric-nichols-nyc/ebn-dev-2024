@@ -33,10 +33,10 @@ const ProjectsId = ({ params }: Props) => {
       animate="visible"
       variants={containerVariants}
     >
-      <div className="mx-auto">
-        <div className="relative pb-16 mx-auto">
+      <div className="min-h-screen bg-zinc-50">
+        <div className="relative  flex flex-col pb-16 mx-auto h-full">
           <Header project={project} />
-          <article className="px-4 mx-auto prose prose-zinc prose-quoteless bg-zinc-50 text-slate-800">
+          <article className="flex flex-1 max-w-2xl px-4 mx-auto prose prose-zinc prose-quoteless text-slate-800">
             <Mdx code={project.body.code} />
           </article>
         </div>
