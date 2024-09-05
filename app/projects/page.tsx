@@ -1,20 +1,20 @@
 import React from "react";
 import { allProjects } from "contentlayer/generated";
-import { ShineBorder } from "@/components/ShineBorderCard";
-import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const AnimatedCard = ({ children, color, ...props }) => {
+const AnimatedCard = ({ children, ...props }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      whileTap={{ scale: 0.95, transition: { duration: 0.2 } }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="h-full w-full overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 md:shadow-xl"
       {...props}
     >
-      <ShineBorder color={color}>
-        {children}
-      </ShineBorder>
+      {children}
     </motion.div>
   );
 };
@@ -80,25 +80,18 @@ const ProjectsPage = () => {
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {allProjects.map((project) => (
-            <motion.div key={project.slug} variants={cardVariants}>
-              <Link href={`/projects/${project.slug}`} className="group">
-                <AnimatedCard
-                  color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
-                  className="h-full"
-                >
-                  <div className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 md:shadow-xl">
-                    <div className="flex flex-col space-y-2 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
-                      <span className="text-sm">{project.date}</span>
-                      <h3 className="text-2xl font-bold">{project.title}</h3>
-                      <p className="text-base font-normal">{project.description}</p>
-                    </div>
-                    <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                      Learn more →
-                    </div>
-                  </div>
-                </AnimatedCard>
-              </Link>
-            </motion.div>
+            <Link key={project.slug} href={`/projects/${project.slug}`} className="group">
+              <AnimatedCard>
+                <div className="flex flex-col space-y-2">
+                  <span className="text-sm text-zinc-500">{project.date}</span>
+                  <h3 className="text-2xl font-bold text-zinc-100">{project.title}</h3>
+                  <p className="text-base text-zinc-400">{project.description}</p>
+                </div>
+                <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
+                  Learn more →
+                </div>
+              </AnimatedCard>
+            </Link>
           ))}
         </motion.div>
       </motion.div>
