@@ -53,6 +53,7 @@ const ProjectsPage = () => {
                       <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
                       Learn more →
                     </div>
+                    </div>
                   </ShineBorder>
                 </Link>
               </div>
