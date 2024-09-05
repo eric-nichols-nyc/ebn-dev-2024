@@ -18,7 +18,7 @@ const containerVariants = {
 const ProjectsPage = () => {
   return (
     <motion.div 
-      className="relative min-h-screen bg-gradient-to-tl from-purple-950 via-purple-800 to-black"
+      className="relative min-h-screen bg-gradient-to-b from-indigo-800 via-black-900 to-black"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
