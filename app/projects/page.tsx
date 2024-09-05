@@ -18,11 +18,13 @@ const containerVariants = {
 const ProjectsPage = () => {
   return (
     <motion.div 
-      className="relative min-h-screen bg-gradient-to-b from-indigo-800 via-black-900 to-black"
+      className="relative min-h-screen"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
+      <div className="relative h-full w-full bg-slate-950"><div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+      <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div>
       <div className="container mx-auto">
         <div className="relative pb-16 px-4 mx-auto">
           <div className="pt-20 mx-auto space-y-8 max-w-7xl md:space-y-16 md:pt-24 lg:pt-32">
