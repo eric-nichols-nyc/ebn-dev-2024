@@ -5,7 +5,11 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const AnimatedCard = motion(ShineBorder);
+const AnimatedCard = motion(React.forwardRef(({ children, ...props }, ref) => (
+  <ShineBorder ref={ref} {...props}>
+    {children}
+  </ShineBorder>
+)));
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
