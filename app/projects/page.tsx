@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { allProjects } from "contentlayer/generated";
 import { ShineBorder } from "@/components/ShineBorderCard";
 import { useTheme } from "next-themes";
@@ -16,6 +16,25 @@ const containerVariants = {
 };
 
 const ProjectsPage = () => {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+  const categories = useMemo(() => {
+    return Array.from(new Set(allProjects.map(project => project.category)));
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    return selectedCategories.length > 0
+      ? allProjects.filter((project) => selectedCategories.includes(project.category))
+      : allProjects;
+  }, [selectedCategories]);
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
   return (
     <motion.div 
       className="relative min-h-screen bg-gradient-to-tl from-zinc-900 via-zinc-400/10 to-zinc-900"
@@ -33,11 +52,29 @@ const ProjectsPage = () => {
               Some of the projects are from work and some are on my own time.
             </p>
           </div>
+          <div className="mt-4">
+            <h3 className="text-xl font-semibold text-zinc-100 mb-2">Filter by Category:</h3>
+            <div className="flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    selectedCategories.includes(category)
+                      ? 'bg-zinc-700 text-zinc-100'
+                      : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100'
+                  } transition-colors duration-200`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="container px-4 py-8 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {allProjects.map((project) => (
+          {filteredProjects.map((project) => (
             <div key={project.slug}>
               <Link href={`/projects/${project.slug}`} className="group">
                 <ShineBorder
