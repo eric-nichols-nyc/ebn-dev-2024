@@ -5,11 +5,19 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const AnimatedCard = motion(React.forwardRef(({ children, ...props }, ref) => (
-  <ShineBorder ref={ref} {...props}>
-    {children}
-  </ShineBorder>
-)));
+const AnimatedCard = ({ children, color, ...props }) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      {...props}
+    >
+      <ShineBorder color={color}>
+        {children}
+      </ShineBorder>
+    </motion.div>
+  );
+};
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -75,18 +83,18 @@ const ProjectsPage = () => {
             <motion.div key={project.slug} variants={cardVariants}>
               <Link href={`/projects/${project.slug}`} className="group">
                 <AnimatedCard
-                  className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 hover:scale-105 md:shadow-xl"
                   color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="h-full"
                 >
-                  <div className="flex flex-col space-y-2 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
-                    <span className="text-sm">{project.date}</span>
-                    <h3 className="text-2xl font-bold">{project.title}</h3>
-                    <p className="text-base font-normal">{project.description}</p>
-                  </div>
-                  <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                    Learn more →
+                  <div className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 md:shadow-xl">
+                    <div className="flex flex-col space-y-2 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
+                      <span className="text-sm">{project.date}</span>
+                      <h3 className="text-2xl font-bold">{project.title}</h3>
+                      <p className="text-base font-normal">{project.description}</p>
+                    </div>
+                    <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
+                      Learn more →
+                    </div>
                   </div>
                 </AnimatedCard>
               </Link>
