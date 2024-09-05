@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" }
   }
@@ -17,7 +17,7 @@ const containerVariants = {
 
 const ProjectsPage = () => {
   return (
-    <motion.div 
+    <motion.div
       className="relative min-h-screen"
       initial="hidden"
       animate="visible"
@@ -48,11 +48,15 @@ const ProjectsPage = () => {
                     color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
                   >
                     <div className="flex flex-col h-full justify-between pointer-events-none ">
-                        <h3 className="text-2xl font-bold h-16 flex items-center text-zinc-200">{project.title}</h3>
-                        <p className="text-base font-normal text-zinc-400">{project.description}</p>
+                      <h3 className="text-2xl font-bold h-16 flex items-center text-zinc-200">
+                        {project.title}
+                      </h3>
+                      <p className="text-base font-normal text-zinc-400">
+                        {project.description}
+                      </p>
                       <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                      Learn more →
-                    </div>
+                        Learn more →
+                      </div>
                     </div>
                   </ShineBorder>
                 </Link>
