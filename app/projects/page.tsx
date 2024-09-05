@@ -2,7 +2,7 @@
 import React from "react";
 import { allProjects } from "contentlayer/generated";
 import { ShineBorder } from "@/components/ShineBorderCard";
-import { useTheme } from "next-themes";
+import { GradientText } from "@/components/GradientText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -27,9 +27,9 @@ const ProjectsPage = () => {
         <div className="relative pb-16 px-4 mx-auto">
           <div className="pt-20 mx-auto space-y-8 max-w-7xl md:space-y-16 md:pt-24 lg:pt-32">
             <div className="max-w-2xl mx-auto lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-[#A07CFE] via-[#FFFFFF] to-[#FFBE7B] bg-clip-text text-transparent sm:text-4xl">
+              <GradientText colors={["#A07CFE", "#FFFFFF", "#FFBE7B"]} className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Projects
-              </h2>
+              </GradientText>
               <p className="mt-4 text-zinc-400">
                 Some of the projects are from work and some are on my own time.
               </p>
@@ -46,10 +46,10 @@ const ProjectsPage = () => {
                     color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
                   >
                     <div className="flex flex-col h-full justify-between pointer-events-none">
-                      <div className="flex flex-col space-y-2 whitespace-pre-wrap bg-gradient-to-t from-black/10 to-gray-300/80 bg-clip-text text-left font-semibold text-transparent dark:from-white dark:to-slate-900/10">
+                      <GradientText colors={["#000000", "#808080"]} className="flex flex-col space-y-2 whitespace-pre-wrap text-left font-semibold dark:from-white dark:to-slate-900/10">
                         <h3 className="text-2xl font-bold h-16 flex items-center">{project.title}</h3>
                         <p className="text-base font-normal">{project.description}</p>
-                      </div>
+                      </GradientText>
                       <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
                       Learn more →
                     </div>
