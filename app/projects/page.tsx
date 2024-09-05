@@ -43,7 +43,6 @@ const ProjectsPage = () => {
                 <Link href={`/projects/${project.slug}`} className="group">
                   <ShineBorder
                     className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 hover:scale-105 md:shadow-xl"
-                    color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
                   >
                     <div className="flex flex-col h-full justify-between pointer-events-none">
                       <GradientText colors={["#000000", "#808080"]} className="flex flex-col space-y-2 whitespace-pre-wrap text-left font-semibold dark:from-white dark:to-slate-900/10">
