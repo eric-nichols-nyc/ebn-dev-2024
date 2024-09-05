@@ -27,10 +27,10 @@ const ProjectsPage = () => {
         <div className="relative pb-16 px-4 mx-auto">
           <div className="pt-20 mx-auto space-y-8 max-w-7xl md:space-y-16 md:pt-24 lg:pt-32">
             <div className="max-w-2xl mx-auto lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-[#A07CFE] via-[#FFFFFF] to-[#FFBE7B] bg-clip-text text-transparent sm:text-4xl">
                 Projects
               </h2>
-              <p className="mt-4 bg-gradient-to-r from-[#A07CFE] via-[#FFFFFF] to-[#FFBE7B] bg-clip-text text-transparent">
+              <p className="mt-4 text-zinc-100">
                 Some of the projects are from work and some are on my own time.
               </p>
             </div>
