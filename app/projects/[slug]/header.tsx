@@ -43,7 +43,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 	return (
 		<header
 			ref={ref}
-			className="relative overflow-hidden w-full h-full bg-black"
+			className="relative overflow-hidden w-full h-full bg-gradient-to-br from-zinc-900 to-black"
 		>
 			<div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
 			<div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>

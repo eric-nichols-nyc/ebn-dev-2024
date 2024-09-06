@@ -44,7 +44,7 @@ const ProjectsPage = () => {
               <div key={project.slug}>
                 <Link href={`/projects/${project.slug}`} className="group">
                   <ShineBorder
-                    className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-background p-6 transition-all duration-300 hover:scale-105 md:shadow-xl"
+                    className="relative flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-lg border bg-gradient-to-br from-zinc-900 to-black p-6 transition-all duration-300 hover:scale-105 md:shadow-xl"
                     color={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
                   >
                     <div className="flex flex-col h-full justify-between pointer-events-none ">
