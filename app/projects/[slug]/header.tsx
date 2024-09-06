@@ -101,7 +101,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 						{project.tags && (
 							<div className="mt-4 flex flex-wrap justify-center gap-2">
 								{project.tags.map((tag, index) => (
-									<span key={index} className="px-2 py-1 text-sm font-medium text-zinc-300 bg-zinc-800 rounded-full">
+									<span key={index} className="px-3 py-1 text-sm font-medium text-zinc-900 bg-zinc-200 border border-zinc-300 rounded-full shadow-sm">
 										{tag}
 									</span>
 								))}
