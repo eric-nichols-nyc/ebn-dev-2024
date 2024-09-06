@@ -2,6 +2,7 @@
 import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
 
 type Props = {
 	project: {
