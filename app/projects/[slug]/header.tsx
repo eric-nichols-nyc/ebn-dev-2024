@@ -9,8 +9,8 @@ type Props = {
 		title: string;
 		description: string;
 		repository?: string;
+		tags?: string[];
 	};
-
 };
 export const Header: React.FC<Props> = ({ project }) => {
 	const ref = useRef<HTMLElement>(null);
@@ -105,9 +105,18 @@ export const Header: React.FC<Props> = ({ project }) => {
 						<p className="mt-6 text-lg leading-8 text-zinc-300">
 							{project.description}
 						</p>
+						{project.tags && (
+							<div className="mt-4 flex flex-wrap justify-center gap-2">
+								{project.tags.map((tag, index) => (
+									<span key={index} className="px-2 py-1 text-sm font-medium text-zinc-300 bg-zinc-800 rounded-full">
+										{tag}
+									</span>
+								))}
+							</div>
+						)}
 					</div>
 
-					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+					<div className="mx-auto mt-8 max-w-2xl lg:mx-0 lg:max-w-none">
 						<div className="grid grid-cols-1 gap-y-6 gap-x-8 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
 							{links.map((link) => (
 								<Link target="_blank" key={link.label} href={link.href}>
