@@ -42,10 +42,10 @@ export const Header: React.FC<Props> = ({ project }) => {
 	return (
 		<header
 			ref={ref}
-			className="relative overflow-hidden size-full bg-black"
+			className="relative overflow-hidden w-full h-full bg-black"
 		>
-			 <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
-			 <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
+			<div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
+			<div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
 			<div
 				className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
 					isIntersecting
@@ -55,22 +55,14 @@ export const Header: React.FC<Props> = ({ project }) => {
 			>
 				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
 					<div className="flex justify-between gap-8">
-						<span
-							title="View counter for this page"
-							className={`duration-200 hover:font-medium flex items-center gap-1 ${
-								isIntersecting
-									? " text-zinc-400 hover:text-zinc-100"
-									: "text-zinc-600 hover:text-zinc-900"
-							} `}
-						>
-						</span>
+						{/* Removed empty span element */}
 						<Link target="_blank" href="https://twitter.com/chronark_">
 							<Twitter
 								className={`w-6 h-6 duration-200 hover:font-medium ${
 									isIntersecting
-										? " text-zinc-400 hover:text-zinc-100"
+										? "text-zinc-400 hover:text-zinc-100"
 										: "text-zinc-600 hover:text-zinc-900"
-								} `}
+								}`}
 							/>
 						</Link>
 						<Link target="_blank" href="https://github.com/chronark">
@@ -92,7 +84,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 								: "text-zinc-600 hover:text-zinc-900"
 						} `}
 					>
-						<ArrowLeft className="w-6 h-6 " />
+						<ArrowLeft className="w-6 h-6" />
 					</Link>
 				</div>
 			</div>
