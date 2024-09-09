@@ -4,7 +4,6 @@ import { allProjects } from "contentlayer/generated";
 import { Header } from "./header";
 import { Mdx } from "@/components/mdx";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 
 type Props = {
   params: {
@@ -48,11 +47,6 @@ const ProjectsId = ({ params }: Props) => {
         <div className="relative  flex flex-col pb-16 mx-auto h-full">
           <Header project={project} />
           <div className="max-w-2xl px-4 mx-auto">
-            <div className="mb-4 flex flex-wrap gap-2">
-              {project.tags && project.tags.map((tag, index) => (
-                <Badge key={index} variant="secondary">{tag}</Badge>
-              ))}
-            </div>
             <article className="prose prose-zinc prose-quoteless text-slate-800">
               <Mdx code={project.body.code} />
             </article>
