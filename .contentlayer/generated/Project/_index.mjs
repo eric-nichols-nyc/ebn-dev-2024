@@ -2,5 +2,6 @@
 
 import projects__airecipesMdx from './projects__airecipes.mdx.json' assert { type: 'json' }
 import projects__aitodosMdx from './projects__aitodos.mdx.json' assert { type: 'json' }
+import projects__moodflixMdx from './projects__moodflix.mdx.json' assert { type: 'json' }
 
-export const allProjects = [projects__airecipesMdx, projects__aitodosMdx]
+export const allProjects = [projects__airecipesMdx, projects__aitodosMdx, projects__moodflixMdx]
