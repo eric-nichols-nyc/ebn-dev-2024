@@ -645,6 +645,9 @@ video {
 .visible {
   visibility: visible;
 }
+.static {
+  position: static;
+}
 .fixed {
   position: fixed;
 }
@@ -736,6 +739,9 @@ video {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -789,6 +795,12 @@ video {
 }
 .hidden {
   display: none;
+}
+.aspect-\[4\/2\] {
+  aspect-ratio: 4/2;
+}
+.aspect-\[4\/3\] {
+  aspect-ratio: 4/3;
 }
 .h-10 {
   height: 2.5rem;
@@ -1263,6 +1275,9 @@ video {
 }
 .bg-clip-text {
   background-clip: text;
+}
+.object-cover {
+  object-fit: cover;
 }
 .p-0 {
   padding: 0px;

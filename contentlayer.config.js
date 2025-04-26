@@ -52,6 +52,14 @@ export const Project = defineDocumentType(() => ({
       of: { type: "string" },
       required: true,
     },
+    image: {
+      type: "string",
+      required: false,
+    },
+    shortDescription: {
+      type: "string",
+      required: false,
+    },
   },
   computedFields,
 }));

@@ -5,5 +5,6 @@ import projects__airecipesMdx from './projects__airecipes.mdx.json' assert { typ
 import projects__aitodosMdx from './projects__aitodos.mdx.json' assert { type: 'json' }
 import projects__moodflixMdx from './projects__moodflix.mdx.json' assert { type: 'json' }
 import projects__smartheadphonesMdx from './projects__smartheadphones.mdx.json' assert { type: 'json' }
+import projects__audiographMdx from './projects__audiograph.mdx.json' assert { type: 'json' }
 
-export const allProjects = [projects__aimockinterviewMdx, projects__airecipesMdx, projects__aitodosMdx, projects__moodflixMdx, projects__smartheadphonesMdx]
+export const allProjects = [projects__aimockinterviewMdx, projects__airecipesMdx, projects__aitodosMdx, projects__moodflixMdx, projects__smartheadphonesMdx, projects__audiographMdx]

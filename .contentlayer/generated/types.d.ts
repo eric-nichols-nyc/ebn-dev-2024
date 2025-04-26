@@ -34,6 +34,8 @@ export type Project = {
   repository?: string | undefined
   tags: string[]
   categories: string[]
+  image?: string | undefined
+  shortDescription?: string | undefined
   /** MDX file body */
   body: MDX
   path: string
