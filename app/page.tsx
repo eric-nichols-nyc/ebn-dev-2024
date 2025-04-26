@@ -27,6 +27,13 @@ export default function Home() {
         enichols.dev
       </h1>
 
+      <Link
+        href="/projects"
+        className="mt-8 px-8 py-3 rounded-lg bg-zinc-800 text-zinc-100 text-lg font-semibold shadow-lg hover:bg-zinc-700 transition-colors duration-200"
+      >
+        View Projects
+      </Link>
+
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
     </div>
   );

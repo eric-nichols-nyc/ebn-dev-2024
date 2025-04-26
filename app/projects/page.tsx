@@ -28,13 +28,13 @@ const ProjectsPage = () => {
       <div className="container mx-auto">
         <div className="relative pb-16 px-4 mx-auto">
           <div className="pt-20 mx-auto space-y-8 max-w-7xl md:space-y-16 md:pt-24 lg:pt-32">
-            <div className="max-w-2xl mx-auto lg:mx-0">
+            <div className="flex flex-col gap-4 max-w-2xl mx-auto lg:mx-0">
+              <GradientText colors={["#A07CFE", "#FFFFFF", "#FFBE7B"]} className="lg:text-5xl font-bold tracking-tight sm:text-4xl">
+                Eric Nichols
+              </GradientText>
               <GradientText colors={["#A07CFE", "#FFFFFF", "#FFBE7B"]} className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Projects
               </GradientText>
-              <p className="mt-4 text-zinc-400">
-                Some of the projects are from work and some are on my own time.
-              </p>
             </div>
           </div>
         </div>
