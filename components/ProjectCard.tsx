@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { ShineBorder } from "@/components/ShineBorderCard";
+import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
   project: {
     slug: string;
     title: string;
     description: string;
+    tags?: string[];
   };
 }
 
@@ -24,6 +26,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
           <p className="text-base font-normal text-zinc-400">
             {project.description}
           </p>
+          {project.tags && project.tags.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.tags.map((tag, idx) => (
+                <Badge key={idx} variant="secondary">{tag}</Badge>
+              ))}
+            </div>
+          )}
           <div className="mt-4 text-sm font-medium text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
             Learn more →
           </div>
