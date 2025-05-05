@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import Sidebar from "./Sidebar";
-
 import "./globals.css";
-
-// add meat for favicon, meta tags, etc.
+import Provider from "@/components/layout/provider";
 
 
 const inter = Inter({
@@ -35,12 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <body className={`${inter.className}`}>
-        {/* Sidebar */}
-        <Sidebar />
-        {/* Main Content */}
-        <main className="h-screen overflow-y-auto flex">
+        <Provider>
           {children}
-        </main>
+        </Provider>
       </body>
     </html>
   );

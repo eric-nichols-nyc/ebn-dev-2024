@@ -1,5 +1,4 @@
 import React from "react";
-import ShineBorder from "@/components/magicui/shine-border";
 
 const HomeContent = () => {
   return (

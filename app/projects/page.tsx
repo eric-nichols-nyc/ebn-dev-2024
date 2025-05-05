@@ -7,7 +7,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/ProjectCard";
 import { useSidebarStore } from "../../store/sidebarStore";
-
+import PageContainer from "@/components/layout/page-container";
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -20,16 +20,7 @@ const containerVariants = {
 const ProjectsPage = () => {
   const { open } = useSidebarStore();
   return (
-    <motion.div
-      className={`flex flex-col flex-grow min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <div className="flex h-full w-full bg-slate-950">
-        <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
-        <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
-      </div>
+    <PageContainer>
       <div className="w-full">
         {/* Sticky Header */}
         <div className="sticky top-0 z-20 bg-slate-950/90 backdrop-blur border-b border-zinc-800 px-4 py-6 mb-8 w-full">
@@ -48,14 +39,14 @@ const ProjectsPage = () => {
           </div>
         </div>
         <div className="px-4 py-12 mx-auto">
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
             {allProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
         </div>
       </div>
-    </motion.div>
+    </PageContainer>
   );
 };
 
