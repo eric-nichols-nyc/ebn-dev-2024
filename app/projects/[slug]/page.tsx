@@ -4,7 +4,7 @@ import { allProjects } from "contentlayer/generated";
 import { Header } from "./header";
 import { Mdx } from "@/components/mdx";
 import { motion } from "framer-motion";
-import { useSidebarStore } from "../../store/sidebarStore";
+import { useSidebarStore } from "../../../store/sidebarStore";
 
 type Props = {
   params: {
@@ -40,12 +40,11 @@ const ProjectsId = ({ params }: Props) => {
   }
   return (
     <motion.div 
-      className={`flex flex-col flex-grow min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
+      className={`flex flex-col flex-grow h-full bg-white transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="flex flex-col flex-grow h-full w-full bg-white border-2 border-black ">
       <Header project={project} />
 
         <div className="relative flex flex-col pb-16 mx-auto h-full">
@@ -55,7 +54,6 @@ const ProjectsId = ({ params }: Props) => {
             </article>
           </div>
         </div>
-      </div>
     </motion.div>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ShineBorder from "@/components/magicui/shine-border";
-import { useSidebarStore } from "./store/sidebarStore";
+import { useSidebarStore } from "../store/sidebarStore";
 import HomeContent from "../components/HomeContent";
 
 export default function Home() {

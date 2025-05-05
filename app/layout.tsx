@@ -34,11 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <body className={`${inter.className} bg-black`}>
+      <body className={`${inter.className}`}>
         {/* Sidebar */}
         <Sidebar />
         {/* Main Content */}
-        <main className="h-screen overflow-y-auto bg-black flex">
+        <main className="h-screen overflow-y-auto flex">
           {children}
         </main>
       </body>

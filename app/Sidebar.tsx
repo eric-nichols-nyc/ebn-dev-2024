@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSidebarStore } from "./store/sidebarStore";
+import { useSidebarStore } from "../store/sidebarStore";
 
 const navLinks = [
   { href: "/", label: "Home" },

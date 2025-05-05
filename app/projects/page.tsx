@@ -6,7 +6,7 @@ import { GradientText } from "@/components/GradientText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/ProjectCard";
-import { useSidebarStore } from "../store/sidebarStore";
+import { useSidebarStore } from "../../store/sidebarStore";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },

@@ -44,18 +44,18 @@ export const Header: React.FC<Props> = ({ project }) => {
 	return (
 		<header
 			ref={ref}
-			className="relative overflow-hidden w-full h-full bg-gradient-to-br from-zinc-900 to-black"
+			className="flex flex-col w-full h-full bg-gradient-to-br from-zinc-900 to-black"
 		>
-			<div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
-			<div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
+			<div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]" />
+			<div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]" />
 			<div
-				className={`inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
+				className={`sticky top-0 z-50 inset-x-0 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
 					isIntersecting
 						? "bg-zinc-900/0 border-transparent"
 						: "bg-white/10  border-zinc-200 lg:border-transparent"
 				}`}
 			>
-				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
+				<div className="flex flex-row-reverse items-center justify-between p-6 mx-auto">
 					<div className="flex justify-between gap-8">
 						{/* Removed empty span element */}
 						<Link target="_blank" href="https://twitter.com/chronark_">
@@ -90,7 +90,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 					</Link>
 				</div>
 			</div>
-			<div className="container mx-auto relative isolate overflow-hidden  py-16 sm:py-16">
+			<div className="container mx-auto relative isolate py-16 sm:py-16">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 					<div className="mx-auto max-w-2xl lg:mx-0">
 						<GradientText
