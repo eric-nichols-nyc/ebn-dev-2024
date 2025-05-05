@@ -21,12 +21,12 @@ const ProjectsPage = () => {
   const { open } = useSidebarStore();
   return (
     <motion.div
-      className={`relative min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
+      className={`flex flex-col flex-grow min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="relative h-full w-full bg-slate-950">
+      <div className="flex h-full w-full bg-slate-950">
         <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
         <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
       </div>

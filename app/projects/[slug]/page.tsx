@@ -40,14 +40,15 @@ const ProjectsId = ({ params }: Props) => {
   }
   return (
     <motion.div 
-      className={`relative min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
+      className={`flex flex-col flex-grow min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="min-h-screen bg-zinc-50">
-        <div className="relative  flex flex-col pb-16 mx-auto h-full">
-          <Header project={project} />
+      <div className="flex flex-col flex-grow h-full w-full bg-white border-2 border-black ">
+      <Header project={project} />
+
+        <div className="relative flex flex-col pb-16 mx-auto h-full">
           <div className="max-w-2xl px-4 mx-auto">
             <article className="prose prose-zinc prose-quoteless text-slate-800">
               <Mdx code={project.body.code} />

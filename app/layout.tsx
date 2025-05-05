@@ -38,7 +38,7 @@ export default function RootLayout({
         {/* Sidebar */}
         <Sidebar />
         {/* Main Content */}
-        <main className="h-screen overflow-y-auto bg-black">
+        <main className="h-screen overflow-y-auto bg-black flex">
           {children}
         </main>
       </body>
