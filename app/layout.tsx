@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import LocalFont from "next/font/local";
 import "./globals.css";
 import Provider from "@/components/layout/provider";
 
@@ -9,10 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
-const calSans = LocalFont({
-  src: "../public/fonts/CalSans-SemiBold.ttf",
-  variable: "--font-calsans",
-});
+
 
 export const metadata: Metadata = {
   title: "Eric's Dev Portfolio",
@@ -29,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html lang="en">
       <body className={`${inter.className}`}>
         <Provider>
           {children}
