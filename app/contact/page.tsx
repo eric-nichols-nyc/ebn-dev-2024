@@ -1,13 +1,15 @@
 import React from 'react'
 import ShineBorder from '@/components/magicui/shine-border'
 import { GradientText } from '../../components/GradientText'
+import PageContainer from '@/components/layout/page-container'
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-col items-center min-h-[60vh] py-10">
-      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-        <GradientText colors={["#0077b5", "#00a0dc", "#d44638", "#ffb300"]}>
-          Get in Touch
+    <PageContainer>
+      <div className="flex flex-col items-center min-h-[60vh] py-10">
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          <GradientText colors={["#0077b5", "#00a0dc", "#d44638", "#ffb300"]}>
+            Get in Touch
         </GradientText>
       </h1>
       <div className="flex flex-col md:flex-row gap-8">
@@ -29,8 +31,9 @@ const ContactPage = () => {
             Email Me
           </a>
         </ShineBorder>
+        </div>
       </div>
-    </div>
+    </PageContainer>
   )
 }
 
