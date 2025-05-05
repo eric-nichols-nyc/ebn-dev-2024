@@ -7,15 +7,7 @@ export default function Home() {
       <div className="w-full max-w-5xl rounded-2xl bg-zinc-900/80 shadow-xl p-8 flex flex-col gap-8 border border-zinc-800">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           {/* Profile Card with ShineBorder */}
-          <ShineBorder color={["#00c6fb", "#005bea"]} borderRadius={24} borderWidth={2} duration={12} className="bg-zinc-900 text-white p-0">
-            <div className="flex flex-col items-center p-6">
-              {/* Placeholder for profile image */}
-              <div className="w-48 h-56 bg-black rounded-xl flex items-center justify-center mb-4">
-                <span className="text-6xl">🧑‍💻</span>
-              </div>
-              <button className="mt-2 px-6 py-2 rounded-lg border border-zinc-700 bg-zinc-800 text-zinc-100 font-semibold hover:bg-zinc-700 transition">LET'S WORK TOGETHER</button>
-            </div>
-          </ShineBorder>
+        
           {/* Intro and Info */}
           <div className="flex-1 flex flex-col gap-4 text-zinc-200">
             <h1 className="text-3xl md:text-4xl font-bold text-white">Hi, I am <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-500 bg-clip-text text-transparent">Eric Nichols</span></h1>
