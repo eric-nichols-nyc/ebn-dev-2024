@@ -169,7 +169,7 @@ const ChatInterface: React.FC = () => {
   return (
     <Card className="w-full h-[calc(100vh-2rem)] flex flex-col">
       <CardHeader>
-        <h2 className="text-2xl font-bold">Chat with AI Assistant</h2>
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Chat with AI Assistant</h2>
       </CardHeader>
       <CardContent className="flex-grow overflow-hidden">
         <ScrollArea className="h-full pr-4" ref={scrollAreaRef}>

@@ -6,6 +6,7 @@ import { GradientText } from "@/components/GradientText";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/ProjectCard";
+import { useSidebarStore } from "../store/sidebarStore";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -17,9 +18,10 @@ const containerVariants = {
 };
 
 const ProjectsPage = () => {
+  const { open } = useSidebarStore();
   return (
     <motion.div
-      className="relative min-h-screen"
+      className={`relative min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -30,8 +32,13 @@ const ProjectsPage = () => {
       </div>
       <div className="w-full">
         {/* Sticky Header */}
-        <div className="sticky top-0 z-20 bg-slate-950/90 backdrop-blur border-b border-zinc-800 px-4 py-6 mb-8">
-          <GradientText colors={["#A07CFE", "#FFFFFF", "#FFBE7B"]} className="text-2xl font-bold tracking-tight">
+        <div className="sticky top-0 z-20 bg-slate-950/90 backdrop-blur border-b border-zinc-800 px-4 py-6 mb-8 w-full">
+          <GradientText
+            colors={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
+            className="text-2xl font-bold tracking-tight w-full
+              absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+              md:static md:translate-x-0 md:translate-y-0 md:text-left md:top-auto md:left-auto md:w-auto text-center"
+          >
             Projects
           </GradientText>
         </div>

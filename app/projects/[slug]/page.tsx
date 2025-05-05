@@ -4,6 +4,7 @@ import { allProjects } from "contentlayer/generated";
 import { Header } from "./header";
 import { Mdx } from "@/components/mdx";
 import { motion } from "framer-motion";
+import { useSidebarStore } from "../../store/sidebarStore";
 
 type Props = {
   params: {
@@ -31,6 +32,7 @@ const containerVariants = {
 };
 
 const ProjectsId = ({ params }: Props) => {
+  const { open } = useSidebarStore();
   const slug = params?.slug;
   const project = allProjects.find((project) => project.slug === slug) as Project | undefined;
   if (!project) {
@@ -38,7 +40,7 @@ const ProjectsId = ({ params }: Props) => {
   }
   return (
     <motion.div 
-      className="relative min-h-screen"
+      className={`relative min-h-screen transition-transform duration-300 md:ml-72 ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}

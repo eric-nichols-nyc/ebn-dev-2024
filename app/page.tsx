@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 import ShineBorder from "@/components/magicui/shine-border";
+import { useSidebarStore } from "./store/sidebarStore";
 
 export default function Home() {
+  const { open } = useSidebarStore();
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tl from-black via-zinc-800/80 to-black p-4">
+    <div
+      className={`min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-tl from-black via-zinc-800/80 to-black p-4 transition-transform duration-300 md:ml-72
+        ${open ? "translate-x-72" : "translate-x-0"} md:translate-x-0`
+      }
+    >
       <div className="w-full max-w-5xl rounded-2xl bg-zinc-900/80 shadow-xl p-8 flex flex-col gap-8 border border-zinc-800">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           {/* Profile Card with ShineBorder */}

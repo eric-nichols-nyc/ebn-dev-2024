@@ -3,6 +3,7 @@ import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { GradientText } from "@/components/GradientText";
 
 type Props = {
 	project: {
@@ -48,7 +49,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 			<div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
 			<div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,0,255,.15),rgba(255,255,255,0))]"></div>
 			<div
-				className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
+				className={`inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
 					isIntersecting
 						? "bg-zinc-900/0 border-transparent"
 						: "bg-white/10  border-zinc-200 lg:border-transparent"
@@ -79,7 +80,7 @@ export const Header: React.FC<Props> = ({ project }) => {
 
 					<Link
 						href="/projects"
-						className={`duration-200 hover:font-medium ${
+						className={`duration-200 hover:font-medium z-10 ${
 							isIntersecting
 								? " text-zinc-400 hover:text-zinc-100"
 								: "text-zinc-600 hover:text-zinc-900"
@@ -89,12 +90,15 @@ export const Header: React.FC<Props> = ({ project }) => {
 					</Link>
 				</div>
 			</div>
-			<div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
+			<div className="container mx-auto relative isolate overflow-hidden  py-16 sm:py-16">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 					<div className="mx-auto max-w-2xl lg:mx-0">
-						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
+						<GradientText
+							colors={["#A07CFE", "#FFFFFF", "#FFBE7B"]}
+							className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display"
+						>
 							{project.title}
-						</h1>
+						</GradientText>
 						<p className="mt-6 text-lg leading-8 text-zinc-300">
 							{project.description}
 						</p>
